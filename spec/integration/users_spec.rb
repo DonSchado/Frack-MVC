@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 Capybara.app = Rack::Builder.new do
-  instance_eval(File.read(File.expand_path('./config.ru')))
+  eval(File.read(File.expand_path('./config.ru')))
 end
 
 describe 'users#index' do

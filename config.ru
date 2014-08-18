@@ -29,18 +29,8 @@ module Frack
   end
 end
 
-class UsersController < Frack::BaseController
-  def index
-    @users = User.all
-    render 'users/index'
-  end
-end
-
-class User
-  def self.all
-    ['Anthony Stark', 'Peter Parker', 'Bruce Wayne']
-  end
-end
+require 'app/controllers/users_controller'
+require 'app/models/user'
 
 # use Rack::CommonLogger
 use Rack::Static, root: 'public', urls: ['/images', '/js', '/css']
