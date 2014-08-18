@@ -2,11 +2,8 @@ module Frack
   class Application
     class << self
       def call(env)
-        if env['PATH_INFO'] == '/'
-          Rack::Response.new(UsersController.new.index)
-        else
-          Rack::Response.new('Not found', 404)
-        end
+        controller = Object.const_get(env['controller'].capitalize + 'Controller')
+        Rack::Response.new(controller.new.send(env['action']))
       end
     end
   end
