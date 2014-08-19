@@ -16,6 +16,7 @@ I for example, had a lot of _fun_ inside the rabbit hole of ActionView, figuring
 So here is an incomplete and unordered list of possible extensions:
 
 - implement redirect_to
+- render partial: 'foo'
 - routing with placeholders
 - routing with specific http verbs
 - error handling
