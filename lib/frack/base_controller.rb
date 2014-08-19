@@ -6,6 +6,10 @@ module Frack
       @env = env
     end
 
+    def params
+      @params ||= Rack::Utils.parse_nested_query(env['QUERY_STRING'])
+    end
+
     def render(view=controller_action)
       render_template(layout) do
         render_template(view)
