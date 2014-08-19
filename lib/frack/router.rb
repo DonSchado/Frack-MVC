@@ -1,17 +1,15 @@
 module Frack
   class Router
-    attr_reader :app
+    attr_reader :app, :routes
 
-    ROUTES = {
-      '/' => 'users#index' ,
-    }
-
-    def initialize(app)
+    def initialize(app, &block)
       @app = app
+      @routes = {}
+      instance_eval(&block) if block_given?
     end
 
     def call(env)
-      if (mapping = ROUTES[env['PATH_INFO']])
+      if (mapping = routes[env['PATH_INFO']])
         env.merge!(controller_action(mapping))
         app.call(env)
       else
@@ -21,6 +19,10 @@ module Frack
 
     def controller_action(mapping)
       Hash[ %w(controller action).zip mapping.split('#') ]
+    end
+
+    def match(route)
+      self.routes.merge!(route)
     end
   end
 end
