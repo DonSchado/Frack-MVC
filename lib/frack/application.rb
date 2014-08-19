@@ -9,7 +9,7 @@ module Frack
       end
 
       def dispatch
-        controller.new.public_send(env['action'])
+        controller.new(env).public_send(env['action'])
       end
 
       def controller
