@@ -17,7 +17,7 @@ module Frack
     end
 
     def file(path)
-      File.join('app', 'views', "#{path}.html.erb")
+      Dir[File.join('app', 'views', "#{path}.html.*")].first
     end
 
     def layout
