@@ -7,6 +7,12 @@ It obviously lacks a lot of features compared to something like Rails and should
 But for serving simple dynamic pages it should be fine.
 
 
+## Rack it up!
+
+When you clone the repo ```bundle``` and ```rackup``` should be enough to get the application running.
+Then point your Browser to ```localhost:9292```.
+
+
 ## Homework for the curious ones
 
 If you found to this repo because of my talk, you may want to dive deeper.
