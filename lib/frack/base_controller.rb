@@ -31,5 +31,11 @@ module Frack
     def controller_action
       File.join(env['controller'], env['action'])
     end
+
+    def redirect_to path
+      body = %Q(Redirecting to <a href="#{path}">#{path}</a>)
+      header = { "Location" => path }
+      [body, 301, header]
+    end
   end
 end
