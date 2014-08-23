@@ -23,6 +23,7 @@ So here is an incomplete and unordered list of possible extensions:
 
 - implement redirect_to
 - render partial: 'foo'
+- render different formats
 - implicit call to render
 - routing with placeholders
 - routing with specific http verbs
