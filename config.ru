@@ -1,4 +1,4 @@
-$LOAD_PATH << '.'
+$LOAD_PATH.unshift '.'
 
 require 'lib/frack'
 require 'app/controllers/users_controller'
