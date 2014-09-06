@@ -18,7 +18,8 @@ module Frack
     end
 
     def controller_action(mapping)
-      Hash[ %w(controller action).zip mapping.split('#') ]
+      controller, action = mapping.split('#')
+      { 'controller' => controller, 'action' => action }
     end
 
     def match(route)
