@@ -4,8 +4,7 @@ module Frack
 
     def initialize(app, &block)
       @app = app
-      @routes = {}
-      instance_eval(&block) if block_given?
+      @routes = RouteBuilder.new(&block).routes
     end
 
     def call(env)
@@ -20,6 +19,19 @@ module Frack
     def controller_action(mapping)
       controller, action = mapping.split('#')
       { 'controller' => controller, 'action' => action }
+    end
+
+    def match(route)
+      self.routes.merge!(route)
+    end
+  end
+
+  class RouteBuilder
+    attr_reader :routes
+
+    def initialize(routes={}, &block)
+      @routes = routes
+      instance_exec(&block) if block_given?
     end
 
     def match(route)
