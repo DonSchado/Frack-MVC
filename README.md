@@ -1,5 +1,7 @@
 # Frack MVC
 
+[![Build Status](https://travis-ci.org/DonSchado/Frack-MVC.svg?branch=master)](https://travis-ci.org/DonSchado/Frack-MVC)
+
 Frack is a small example implementation of how to build a simple MVC style application from scratch.
 Check out the commit history to see how I implemented it step-by-step.
 
