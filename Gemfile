@@ -9,4 +9,5 @@ group :development, :test do
   gem 'pry'
   gem 'rspec'
   gem 'capybara'
+  gem 'rake'
 end
