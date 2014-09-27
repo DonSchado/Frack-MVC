@@ -24,6 +24,7 @@ I for example, had a lot of _fun_ inside the rabbit hole of ActionView, figuring
 So here is an incomplete and unordered list of possible extensions:
 
 - render partial: 'foo'
+- render different formats
 - implicit call to render
 - routing with placeholders
 - routing with specific http verbs
