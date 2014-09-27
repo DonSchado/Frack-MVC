@@ -20,10 +20,6 @@ module Frack
       controller, action = mapping.split('#')
       { 'controller' => controller, 'action' => action }
     end
-
-    def match(route)
-      self.routes.merge!(route)
-    end
   end
 
   class RouteBuilder
