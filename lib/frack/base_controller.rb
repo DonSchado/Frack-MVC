@@ -38,5 +38,13 @@ module Frack
       header = { "Location" => path }
       @response = [[body], 301, header]
     end
+
+    def process_action(action)
+      public_send action
+      if response.nil?
+        render
+      end
+      response
+    end
   end
 end
