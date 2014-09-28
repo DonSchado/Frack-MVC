@@ -1,6 +1,6 @@
 module Frack
   class BaseController
-    attr_reader :env
+    attr_reader :env, :response
 
     def initialize(env)
       @env = env
@@ -11,9 +11,10 @@ module Frack
     end
 
     def render(view=controller_action)
-      render_template(layout) do
+      body = render_template(layout) do
         render_template(view)
       end
+      @response = [body]
     end
 
     def render_template(path, &block)
@@ -35,7 +36,7 @@ module Frack
     def redirect_to path
       body = %Q(Redirecting to <a href="#{path}">#{path}</a>)
       header = { "Location" => path }
-      [body, 301, header]
+      @response = [[body], 301, header]
     end
   end
 end
