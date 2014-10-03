@@ -39,4 +39,4 @@ So here is an incomplete and unordered list of possible extensions:
 - asset management
 - ...
 
-### => or just love the Rails core team for their amazing work! ;)
+### => or just love the Rails [contributors](https://github.com/rails/rails/graphs/contributors) for their amazing work! ;)
